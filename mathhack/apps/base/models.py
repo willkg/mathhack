@@ -13,6 +13,7 @@ class Problem(Model):
     operation = Column(String())
     answer = Column(Integer())
 
+
 class User(Model): 
     __tablename__ = 'user'
     
@@ -25,6 +26,8 @@ class User(Model):
 class Answer(Model):
     __tablename__ = 'answer'
     
+    id = Column(Integer, Sequence('answer_id_seq'), primary_key=True,
+                autoincrement=True)
     problem_id = Column(Integer, ForeignKey("problem.id"))
     user_id = Column(Integer, ForeignKey("user.id"))
     timestamp = Column(Integer()) # when the user answered the question
