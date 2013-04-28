@@ -9,7 +9,7 @@ from migrate.exceptions import DatabaseAlreadyControlledError
 from migrate.versioning import api as migrate_api
 
 from mathhack.wsgi import app
-from mathhack.app.base.utils import generate_equations
+from mathhack.apps.base.utils import generate_equations
 
 
 manager = Manager(app)
