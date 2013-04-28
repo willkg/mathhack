@@ -13,6 +13,7 @@ class Problem(Model):
     operation = Column(String())
     answer = Column(Integer())
 
+
 class User(Model): 
     __tablename__ = 'user'
     
