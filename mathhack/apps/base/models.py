@@ -1,6 +1,7 @@
-from sqlalchemy import Column, Integer
+from sqlalchemy import Column, ForeignKey, Integer, Sequence, String
 
 from mathhack.database.classes import Model
+
 
 class Problem(Model):
     __tablename__ = 'problem'
