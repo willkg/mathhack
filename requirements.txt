@@ -1,0 +1,10 @@
+Flask
+Flask-Funnel
+Flask-Mobility
+Flask-Script
+nose
+SQLAlchemy
+sqlalchemy-migrate
+WTForms
+
+gunicorn
