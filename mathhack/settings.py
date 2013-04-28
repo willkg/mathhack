@@ -12,7 +12,7 @@ DEBUG = truthiness(os.environ.get('DEBUG', False))
 DATABASE_URL = os.environ.get('DATABASE_URL', 'sqlite:///mathhack_app.db')
 
 INSTALLED_APPS = [
-    'mathhack.apps.sample'
+    'mathhack.apps.base',
 ]
 
 # Flask-Funnel
