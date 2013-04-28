@@ -31,9 +31,11 @@ def db_create():
     """Create the database"""
     try:
         migrate_api.version_control(url=db_url, repository=db_repo)
-        db_upgrade()
+        db_upgrade(verbose=False)
+        print 'Database created: {0}'.format(app.config['DATABASE_URL'])
     except DatabaseAlreadyControlledError:
         print 'ERROR: Database is already version controlled.'
+
 
 
 @manager.command
@@ -50,16 +52,17 @@ def db_downgrade(version):
 
 
 @manager.command
-def db_upgrade(version=None):
+def db_upgrade(version=None, verbose=True):
     """Upgrade the database"""
     v1 = get_db_version()
     migrate_api.upgrade(url=db_url, repository=db_repo, version=version)
     v2 = get_db_version()
 
-    if v1 == v2:
-        print 'Database already up-to-date.'
-    else:
-        print 'Upgraded: %s ... %s' % (v1, v2)
+    if verbose:
+        if v1 == v2:
+            print 'Database already up-to-date.'
+        else:
+            print 'Upgraded: %s ... %s' % (v1, v2)
 
 
 @manager.command
