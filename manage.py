@@ -9,6 +9,7 @@ from migrate.exceptions import DatabaseAlreadyControlledError
 from migrate.versioning import api as migrate_api
 
 from mathhack.wsgi import app
+from mathhack.app.base.utils import generate_equations
 
 
 manager = Manager(app)
@@ -35,7 +36,7 @@ def db_create():
         print 'Database created: {0}'.format(app.config['DATABASE_URL'])
     except DatabaseAlreadyControlledError:
         print 'ERROR: Database is already version controlled.'
-
+    print 'Done!'
 
 
 @manager.command
@@ -49,6 +50,7 @@ def db_downgrade(version):
         print 'No changes made.'
     else:
         print 'Downgraded: %s ... %s' % (v1, v2)
+    print 'Done!'
 
 
 @manager.command
@@ -63,12 +65,14 @@ def db_upgrade(version=None, verbose=True):
             print 'Database already up-to-date.'
         else:
             print 'Upgraded: %s ... %s' % (v1, v2)
+        print 'Done!'
 
 
 @manager.command
 def db_version():
     """Get the current version of the database"""
     print get_db_version()
+    print 'Done!'
 
 
 @manager.command
@@ -76,6 +80,7 @@ def new_migration(description):
     """Create a new migration"""
     migrate_api.script(description, db_repo)
     print 'New migration script created.'
+    print 'Done!'
 
 
 @manager.command
@@ -87,6 +92,13 @@ def install_npm_modules():
     call_command('cp node.json package.json', verbose=True)
     call_command('npm install', verbose=True)
     call_command('rm package.json', verbose=True)
+    print 'Done!'
+
+
+@manager.command
+def populate_equations():
+    generate_equations()
+    print 'Done!'
 
 
 if __name__ == '__main__':
