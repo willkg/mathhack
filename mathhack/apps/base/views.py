@@ -45,3 +45,10 @@ def dashboard():
     return render_template('base/dashboard.html', {
             'username': session['username']
     })
+
+
+@blueprint.route('/problemset')
+def problem_set():
+    """Initial problem set page."""
+
+    return render_template('base/problem_set.html')
