@@ -1,0 +1,16 @@
+body {
+    background-color: grey;
+}
+
+h1{
+    color: purple;
+    text-align: center;
+}
+
+#page {
+max-width: 940 px;
+min-width: 720 px;
+margin: 10 px auto 10 px auto;
+padding: 20 px;
+border: 4 px double #000;
+background-color: white}

@@ -2,9 +2,13 @@
 {% block title %}MATHHACKS HOME{% endblock title %}
 
 {% block content %}
+
+<body>
+    <div id = "page">
 <h1>Welcome to MathHack!</h1>
+
 <p>
-  Arithmetic is easy! You probably use a calculaor. Do you always believe what it says?
+  Arithmetic is easy! You probably use a calculator. Do you always believe what it says?
   
   Sometimes you'll enter a wrong number and the results will be way off. You should have an idea of the answer's range before you look at the calculator's answers.
 
@@ -14,11 +18,15 @@ Create a username to save your scores between visits.
 <form name="input" action="html_form_action.asp" method="post">
 Name: <input type="text" name="Name" value=""><br>
 
+<p class="text-center">
+
 <input type="submit" value="Submit">
 </form> 
-
-
-<button type="button">Click to start game!</button>
-  
 </p>
+<p class="text-center">
+  <button class="btn btn-large btn-primary" type="button">Click to Start Game</button>
+</p>
+
+</div>
+  
 {% endblock content %}
