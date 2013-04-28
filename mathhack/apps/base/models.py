@@ -7,8 +7,8 @@ class Problem(Model):
     
     id = Column(Integer, Sequence('problem_id_seq'), primary_key=True,
                 autoincrement=True)
-    numerator = Column(Integer())
-    denominator = Column(Integer())
+    numerator = Column(Integer()) # the upper value
+    denominator = Column(Integer()) # the lower value
     operation = Column(String())
     answer = Column(Integer())
 
@@ -26,6 +26,6 @@ class Answer(Model):
     
     problem_id = Column(Integer, ForeignKey("problem.id"))
     user_id = Column(Integer, ForeignKey("user.id"))
-    timestamp = Column(Integer())
-    answer = Column(Integer())
-    delay = Column(Integer())
+    timestamp = Column(Integer()) # when the user answered the question
+    answer = Column(Integer()) # the answer the user provided
+    delay = Column(Integer()) # how long it took to answer
