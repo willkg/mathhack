@@ -2,3 +2,4 @@
 *.pyo
 docs/_build
 .DS_Store
+mathhacks_app.db
