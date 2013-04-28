@@ -5,7 +5,7 @@
 Summary
 =======
 
-mathhack is something we threw together on a Saturday at Brian's
+Mathhack is something we threw together on a Saturday at Brian's
 house.
 
 
