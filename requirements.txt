@@ -3,8 +3,9 @@ Flask-Funnel
 Flask-Mobility
 Flask-Script
 nose
-SQLAlchemy
+SQLAlchemy==0.7.10
 sqlalchemy-migrate
 WTForms
 
 gunicorn
+https://github.com/rehandalal/buchner/zipball/master#egg=buchner
